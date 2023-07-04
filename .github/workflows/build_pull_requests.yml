@@ -1,0 +1,246 @@
+name: Pull Request Build
+
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
+on: pull_request
+
+jobs:
+  publish_bom_job:
+    name: Publish BOM to MavenLocal
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.m2/repository/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Run Publish to MavenLocal
+        run: ./gradlew :bom:publishUnsignedReleasePublicationToMavenLocal
+
+      - name: Upload Repository
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-reports
+          path: '~/.m2/repository/'
+
+  test_job:
+    needs: [ publish_bom_job ]
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.m2/repository/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Run Debug Tests
+        run: ./gradlew testDebugUnitTest
+
+      - name: Upload Test Reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-reports
+          path: '**/build/reports/tests/'
+
+  code_formatting_job:
+    needs: [ publish_bom_job ]
+    name: Code Formatting
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.m2/repository/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Run ktlint
+        run: ./gradlew ktlintCheck
+
+      - name: Upload ktlint Reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ktlint-report
+          path: '**/build/reports/ktlint'
+
+  code_analysis_job:
+    needs: [ publish_bom_job ]
+    name: Code Analysis
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.m2/repository/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Run detekt
+        run: ./gradlew detekt
+
+      - name: Upload detekt Reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: ktlint-report
+          path: '**/build/reports/detekt'
+
+  lint_job:
+    needs: [ publish_bom_job ]
+    name: Lint
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 20
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.m2/repository/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: Run Debug Lint
+        run: ./gradlew lintDebug
+
+      - name: Upload Lint Reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: lint-report
+          path: '**/build/reports/lint-results-*'
+
+  assemble_job:
+    needs: [ publish_bom_job ]
+    name: Assemble
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 30
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+
+      - name: Restore Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            ~/.m2/repository/
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Assemble App
+        run: ./gradlew :app:assemble
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: apk
+          path: app/build/outputs/apk/staging**/**/**.apk
+
+  notification_job:
+    needs: [ test_job, code_formatting_job, code_analysis_job, lint_job, assemble_job ]
+    name: Notify Build Status
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v3
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ env.WORKFLOW_CONCLUSION }}
+          fields: commit,ref,workflow,eventName
+          author_name: ${{ github.actor }}
+          icon_emoji: ':robot_face:'
+          username: "Pull Request Build Status"
+          text: |
+            ${{ env.WORKFLOW_CONCLUSION }}:
+            https://github.com/loopsocial/android-version-catalog/actions/runs/${{ github.run_id }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required

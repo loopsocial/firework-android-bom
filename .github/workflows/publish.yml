@@ -1,0 +1,52 @@
+name: Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish_job:
+    name: Publish
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 20
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt'
+          java-version: 17
+
+      - name: Run Publish
+        env:
+          GPG_SIGNING_KEY_ID: ${{ secrets.GPG_SIGNING_KEY_ID }}
+          GPG_SIGNING_PASSWORD: ${{ secrets.GPG_SIGNING_PASSWORD }}
+          GPG_SIGNING_SECRET_KEY: ${{ secrets.GPG_SIGNING_SECRET_KEY }}
+          OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+        run: ./gradlew :bom:publishSignedReleasePublicationToMavenRepository
+
+  notification_job:
+    needs: [ publish_job ]
+    name: Notify Build Status
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: technote-space/workflow-conclusion-action@v3
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ env.WORKFLOW_CONCLUSION }}
+          fields: commit,ref,workflow,eventName
+          author_name: ${{ github.actor }}
+          icon_emoji: ':robot_face:'
+          username: "BOM Publish Status"
+          text: |
+            ${{ env.WORKFLOW_CONCLUSION }}:
+            https://github.com/loopsocial/firework_sdk_v2/actions/runs/${{ github.run_id }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }} # required
+

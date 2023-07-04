@@ -1,0 +1,11 @@
+# Integration with Issue Tracker
+#
+# (note that '\' need to be escaped).
+
+[issuetracker "Jira Rule"]
+  regex = "ASDK-(\\d+)"
+  url = "https://fwn.atlassian.net/browse/ASDK-$1"
+
+[issuetracker "GitHub Rule"]
+  regex = "#(\\d+)"
+  url = "https://github.com/loopsocial/firework_sdk_v2/issues/$1"
