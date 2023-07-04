@@ -12,7 +12,7 @@ By using the BoM version, the app doesn't need to define the dependencies versio
 ## Latest release
 
 ```kotlin
-    implementation(platform("androidx.compose:compose-bom:2023.07.04"))
+implementation(platform("androidx.compose:compose-bom:2023.07.04"))
 ```
 
 ### Dependencies versions
