@@ -25,7 +25,7 @@ bomGenerator {
 
     // region Core
     includeDependency("com.firework.core.network", "http", "7.0.0")
-    includeDependency("com.firework.core.network", "web-socket", "7.0.0")
+    includeDependency("com.firework.core.network", "web-socket", "7.1.0")
     includeDependency("com.firework.core", "event-bus", "7.0.0")
     includeDependency("com.firework.core", "gql", "7.0.1")
     includeDependency("com.firework.core", "image-loader", "7.0.0")
