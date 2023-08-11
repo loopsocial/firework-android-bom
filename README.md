@@ -19,11 +19,11 @@ implementation(platform("androidx.compose:compose-bom:2023.08.11"))
 
 | Dependency                                        | Version  |
 | :------------------------------------------------ |:---------|
-| com.firework:sdk                                  | 6.4.0    |
-| com.firework.external.imageloading:glide          | 6.4.0    |
-| com.firework.external.imageloading:picasso        | 6.4.0    |
-| com.firework.external.livestream:multiHostPlayer  | 6.4.0    |
-| com.firework.external.livestream:singleHostPlayer | 6.4.0    |
+| com.firework:sdk                                  | 6.3.4    |
+| com.firework.external.imageloading:glide          | 6.3.4    |
+| com.firework.external.imageloading:picasso        | 6.3.4   |
+| com.firework.external.livestream:multiHostPlayer  | 6.3.4    |
+| com.firework.external.livestream:singleHostPlayer | 6.3.4    |
 | com.firework.android.exoplayer:exoplayer-core     | 2.16.1.6 |
 | com.firework.android.exoplayer:exoplayer-hls      | 2.16.1.6 |
 | com.firework.android.exoplayer:exoplayer-ui       | 2.16.1.6 |
