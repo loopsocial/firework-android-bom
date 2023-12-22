@@ -24,6 +24,8 @@ bomGenerator {
     // endregion
 
     // region Core
+    includeDependency("com.firework.core", "di", "8.0.0")
+    includeDependency("com.firework.core", "di-android", "8.0.0")
     includeDependency("com.firework.core", "event-bus", "7.0.0")
     includeDependency("com.firework.core", "gql", "7.0.2")
     includeDependency("com.firework.core", "image-loader", "7.0.4")
