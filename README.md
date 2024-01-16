@@ -1,13 +1,13 @@
-# Android BoM ![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.firework/firework-bom/badge.svg)
+# Firework Android BoM ![Firework Android BoM GitHub Release](https://img.shields.io/github/v/release/loopsocial/firework-android-bom?label=Firework%20Android%20BoM&color=%2399CC00)
 
-This repository holds Android Dependencies Bill of Materials - BoM which is required by the company/client Android Apps.
+This repository holds the Android Dependencies Bill of Materials - BoM which the Android SDK clients can use.
 
 The Android Dependencies BoM is a Gradle file that defines all the dependencies versions for the client app which is using the Company Android SDKs.
-It also includes the Android core modules versions that are going to be open-sourced at some point.
+It also includes the Android core modules versions that will be open-sourced at some point.
 
 This is useful to avoid conflicts between SDKs using different core modules or Company/Client apps using a core.
 
-By using the BoM version, the app doesn't need to define the dependencies versions, and it will use the versions defined in the BoM.
+Using the BoM version, the app doesn't need to define the dependencies versions, and it will use the versions defined in the BoM.
 
 ## Latest release
 
