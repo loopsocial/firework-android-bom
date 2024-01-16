@@ -1,4 +1,4 @@
-# Firework Android BoM ![Firework Android BoM GitHub Release](https://img.shields.io/github/v/release/loopsocial/firework-android-bom?label=Firework%20Android%20BoM&color=%2399CC00)
+# Firework Android BoM ![GitHub Release](https://img.shields.io/github/v/release/loopsocial/firework-android-bom?label=GitHub%20Release&color=%2399CC00)
 
 This repository holds the Android Dependencies Bill of Materials - BoM which the Android SDK clients can use.
 
