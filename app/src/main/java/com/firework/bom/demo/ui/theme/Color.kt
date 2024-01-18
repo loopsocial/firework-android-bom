@@ -1,6 +1,6 @@
 @file:Suppress("MagicNumber")
 
-package com.firework.demo.ui.theme
+package com.firework.bom.demo.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.firework.demo.ui.theme
+package com.firework.bom.demo.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
