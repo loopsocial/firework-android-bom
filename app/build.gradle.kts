@@ -4,14 +4,14 @@ plugins {
 }
 
 android {
-    namespace = "com.firework.demo"
-    compileSdk = 33
+    namespace = "com.firework.bom.demo"
+    compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.firework.demo"
+        applicationId = "com.firework.bom.demo"
 
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
 
         versionCode = 1
         versionName = "1.0.0"
@@ -55,9 +55,9 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.activity:activity-compose:1.7.2")
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.activity:activity-compose:1.8.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
@@ -72,7 +72,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // Firework SDK
-    implementation(platform("com.firework:firework-bom:2023.06.28"))
+    implementation(platform("com.firework:firework-bom:2024.01.18"))
     // implementation("com.firework:sdk")
 
     // implementation("com.firework.external.imageloading:glide")

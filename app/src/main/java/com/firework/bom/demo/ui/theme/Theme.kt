@@ -1,4 +1,4 @@
-package com.firework.demo.ui.theme
+package com.firework.bom.demo.ui.theme
 
 import android.app.Activity
 import android.os.Build

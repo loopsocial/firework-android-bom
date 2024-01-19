@@ -6,7 +6,7 @@ plugins {
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.8.0"
+    val fireworkSdkVersion = "6.9.0"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
@@ -24,21 +24,21 @@ bomGenerator {
     // endregion
 
     // region Core
-    includeDependency("com.firework.core", "di", "8.0.0")
-    includeDependency("com.firework.core", "di-android", "8.0.0")
+    includeDependency("com.firework.core.di", "di-core", "8.0.0")
+    includeDependency("com.firework.core.di", "di-android", "8.0.0")
     includeDependency("com.firework.core", "event-bus", "7.0.0")
-    includeDependency("com.firework.core", "gql", "7.0.2")
+    includeDependency("com.firework.core", "gql", "7.0.3")
     includeDependency("com.firework.core", "image-loader", "7.0.4")
     includeDependency("com.firework.core", "json", "7.0.0")
     includeDependency("com.firework.core", "logger", "8.1.0")
     includeDependency("com.firework.core", "motion-sensor", "7.0.0")
-    includeDependency("com.firework.core", "player", "8.0.6")
+    includeDependency("com.firework.core", "player", "8.1.4")
     includeDependency("com.firework.core", "session-manager", "7.0.0")
     includeDependency("com.firework.core", "storage", "7.0.1")
     includeDependency("com.firework.core", "utility", "7.0.0")
     includeDependency("com.firework.core", "vast-parser", "7.0.1")
     includeDependency("com.firework.core.network", "http", "7.1.0")
-    includeDependency("com.firework.core.network", "web-socket", "8.0.1")
+    includeDependency("com.firework.core.network", "web-socket", "8.1.0")
     // endregion
 }
 
@@ -74,7 +74,7 @@ publishing {
 fun MavenPublication.configurePublication() {
     groupId = "com.firework"
     artifactId = "firework-bom"
-    version = "2023.11.01"
+    version = "2024.01.18"
 }
 
 fun MavenPublication.configurePom() {
