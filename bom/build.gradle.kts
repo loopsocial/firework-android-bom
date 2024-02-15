@@ -32,7 +32,7 @@ bomGenerator {
     includeDependency("com.firework.core", "json", "7.0.0")
     includeDependency("com.firework.core", "logger", "8.1.0")
     includeDependency("com.firework.core", "motion-sensor", "7.0.0")
-    includeDependency("com.firework.core", "player", "8.1.4")
+    includeDependency("com.firework.core", "player", "8.1.5")
     includeDependency("com.firework.core", "session-manager", "7.0.0")
     includeDependency("com.firework.core", "storage", "7.0.1")
     includeDependency("com.firework.core", "utility", "7.0.0")
