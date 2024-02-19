@@ -72,7 +72,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // Firework SDK
-    implementation(platform("com.firework:firework-bom:2024.02.07"))
+    implementation(platform("com.firework:firework-bom:2024.02.16"))
     // implementation("com.firework:sdk")
 
     // implementation("com.firework.external.imageloading:glide")
