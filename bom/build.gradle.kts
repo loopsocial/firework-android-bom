@@ -15,14 +15,6 @@ bomGenerator {
     includeDependency("com.firework.external.livestream", "singleHostPlayer", fireworkSdkVersion)
     // endregion
 
-    // region ExoPlayer
-    val fireworkExoPlayerVersion = "2.16.1.6"
-    includeDependency("com.firework.android.exoplayer", "exoplayer-core", fireworkExoPlayerVersion)
-    includeDependency("com.firework.android.exoplayer", "exoplayer-hls", fireworkExoPlayerVersion)
-    includeDependency("com.firework.android.exoplayer", "exoplayer-ui", fireworkExoPlayerVersion)
-    includeDependency("com.firework.android.exoplayer", "extension-ima", fireworkExoPlayerVersion)
-    // endregion
-
     // region Core
     includeDependency("com.firework.core.di", "di-core", "8.0.0")
     includeDependency("com.firework.core.di", "di-android", "8.0.0")
