@@ -6,21 +6,13 @@ plugins {
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.9.3"
+    val fireworkSdkVersion = "6.10.0"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
     includeDependency("com.firework.external.imageloading", "picasso", fireworkSdkVersion)
     includeDependency("com.firework.external.livestream", "multiHostPlayer", fireworkSdkVersion)
     includeDependency("com.firework.external.livestream", "singleHostPlayer", fireworkSdkVersion)
-    // endregion
-
-    // region ExoPlayer
-    val fireworkExoPlayerVersion = "2.16.1.6"
-    includeDependency("com.firework.android.exoplayer", "exoplayer-core", fireworkExoPlayerVersion)
-    includeDependency("com.firework.android.exoplayer", "exoplayer-hls", fireworkExoPlayerVersion)
-    includeDependency("com.firework.android.exoplayer", "exoplayer-ui", fireworkExoPlayerVersion)
-    includeDependency("com.firework.android.exoplayer", "extension-ima", fireworkExoPlayerVersion)
     // endregion
 
     // region Core
@@ -32,7 +24,7 @@ bomGenerator {
     includeDependency("com.firework.core", "json", "7.0.0")
     includeDependency("com.firework.core", "logger", "8.1.0")
     includeDependency("com.firework.core", "motion-sensor", "7.0.0")
-    includeDependency("com.firework.core", "player", "8.1.4")
+    includeDependency("com.firework.core", "player", "8.2.1")
     includeDependency("com.firework.core", "session-manager", "7.0.0")
     includeDependency("com.firework.core", "storage", "7.0.1")
     includeDependency("com.firework.core", "utility", "7.0.0")
@@ -74,7 +66,7 @@ publishing {
 fun MavenPublication.configurePublication() {
     groupId = "com.firework"
     artifactId = "firework-bom"
-    version = "2024.02.16"
+    version = "2024.03.26"
 }
 
 fun MavenPublication.configurePom() {
