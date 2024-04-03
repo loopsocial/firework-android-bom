@@ -12,30 +12,30 @@ Using the BoM version, the app doesn't need to define the dependencies versions,
 ## Latest release
 
 ```kotlin
-implementation(platform("androidx.compose:compose-bom:2024.03.28"))
+implementation(platform("androidx.compose:compose-bom:2024.04.03"))
 ```
 
 ### Dependencies versions
 
-| Dependency                                        | Version  |
-|:--------------------------------------------------|:---------|
-| com.firework:sdk                                  | 6.10.1   |
-| com.firework.external.imageloading:glide          | 6.10.1   |
-| com.firework.external.imageloading:picasso        | 6.10.1   |
-| com.firework.external.livestream:multiHostPlayer  | 6.10.1   |
-| com.firework.external.livestream:singleHostPlayer | 6.10.1   |
-| com.firework.core.di:di-core                      | 8.0.0    |
-| com.firework.core.di:di-android                   | 8.0.0    |
-| com.firework.core:event-bus                       | 7.0.0    |
-| com.firework.core:gql                             | 7.0.3    |
-| com.firework.core:image-loader                    | 7.0.4    |
-| com.firework.core:json                            | 7.0.0    |
-| com.firework.core:logger                          | 8.1.0    |
-| com.firework.core:motion-sensor                   | 7.0.0    |
-| com.firework.core:player                          | 8.2.1    |
-| com.firework.core:session-manager                 | 7.0.0    |
-| com.firework.core:storage                         | 7.0.1    |
-| com.firework.core:utility                         | 7.0.0    |
-| com.firework.core:vast-parser                     | 7.0.1    |
-| com.firework.core.network:http                    | 7.1.0    |
-| com.firework.core.network:web-socket              | 8.1.0    |
+| Dependency                                        | Version |
+|:--------------------------------------------------|:--------|
+| com.firework:sdk                                  | 6.10.1  |
+| com.firework.external.imageloading:glide          | 6.10.1  |
+| com.firework.external.imageloading:picasso        | 6.10.1  |
+| com.firework.external.livestream:multiHostPlayer  | 6.10.1  |
+| com.firework.external.livestream:singleHostPlayer | 6.10.1  |
+| com.firework.core.di:di-core                      | 8.0.0   |
+| com.firework.core.di:di-android                   | 8.0.0   |
+| com.firework.core:event-bus                       | 7.0.0   |
+| com.firework.core:gql                             | 7.0.3   |
+| com.firework.core:image-loader                    | 7.0.4   |
+| com.firework.core:json                            | 7.0.0   |
+| com.firework.core:logger                          | 8.1.0   |
+| com.firework.core:motion-sensor                   | 7.0.0   |
+| com.firework.core:player                          | 8.2.2   |
+| com.firework.core:session-manager                 | 7.0.0   |
+| com.firework.core:storage                         | 7.0.1   |
+| com.firework.core:utility                         | 7.0.0   |
+| com.firework.core:vast-parser                     | 7.0.1   |
+| com.firework.core.network:http                    | 7.1.0   |
+| com.firework.core.network:web-socket              | 8.1.0   |
