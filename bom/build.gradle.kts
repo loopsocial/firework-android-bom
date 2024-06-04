@@ -66,7 +66,7 @@ publishing {
 fun MavenPublication.configurePublication() {
     groupId = "com.firework"
     artifactId = "firework-bom"
-    version = "2024.05.01"
+    version = "2024.06.04"
 }
 
 fun MavenPublication.configurePom() {
