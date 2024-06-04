@@ -6,7 +6,7 @@ plugins {
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.12.1"
+    val fireworkSdkVersion = "6.12.2"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
@@ -66,7 +66,7 @@ publishing {
 fun MavenPublication.configurePublication() {
     groupId = "com.firework"
     artifactId = "firework-bom"
-    version = "2024.06.05"
+    version = "2024.06.06"
 }
 
 fun MavenPublication.configurePom() {
