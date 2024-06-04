@@ -12,18 +12,18 @@ Using the BoM version, the app doesn't need to define the dependencies versions,
 ## Latest release
 
 ```kotlin
-implementation(platform("androidx.compose:compose-bom:2024.05.01"))
+implementation(platform("androidx.compose:compose-bom:2024.06.04"))
 ```
 
 ### Dependencies versions
 
 | Dependency                                        | Version |
 |:--------------------------------------------------|:--------|
-| com.firework:sdk                                  | 6.11.0  |
-| com.firework.external.imageloading:glide          | 6.11.0  |
-| com.firework.external.imageloading:picasso        | 6.11.0  |
-| com.firework.external.livestream:multiHostPlayer  | 6.11.0  |
-| com.firework.external.livestream:singleHostPlayer | 6.11.0  |
+| com.firework:sdk                                  | 6.12.0  |
+| com.firework.external.imageloading:glide          | 6.12.0  |
+| com.firework.external.imageloading:picasso        | 6.12.0  |
+| com.firework.external.livestream:multiHostPlayer  | 6.12.0  |
+| com.firework.external.livestream:singleHostPlayer | 6.12.0  |
 | com.firework.core.di:di-core                      | 8.0.0   |
 | com.firework.core.di:di-android                   | 8.0.0   |
 | com.firework.core:event-bus                       | 7.0.0   |
@@ -32,7 +32,7 @@ implementation(platform("androidx.compose:compose-bom:2024.05.01"))
 | com.firework.core:json                            | 7.0.0   |
 | com.firework.core:logger                          | 8.1.0   |
 | com.firework.core:motion-sensor                   | 7.0.0   |
-| com.firework.core:player                          | 8.2.3   |
+| com.firework.core:player                          | 8.3.0   |
 | com.firework.core:session-manager                 | 7.0.0   |
 | com.firework.core:storage                         | 7.0.1   |
 | com.firework.core:utility                         | 7.0.0   |
