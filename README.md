@@ -12,18 +12,18 @@ Using the BoM version, the app doesn't need to define the dependencies versions,
 ## Latest release
 
 ```kotlin
-implementation(platform("androidx.compose:compose-bom:2024.07.16"))
+implementation(platform("androidx.compose:compose-bom:2024.08.08"))
 ```
 
 ### Dependencies versions
 
 | Dependency                                        | Version |
 |:--------------------------------------------------|:--------|
-| com.firework:sdk                                  | 6.13.0  |
-| com.firework.external.imageloading:glide          | 6.13.0  |
-| com.firework.external.imageloading:picasso        | 6.13.0  |
-| com.firework.external.livestream:multiHostPlayer  | 6.13.0  |
-| com.firework.external.livestream:singleHostPlayer | 6.13.0  |
+| com.firework:sdk                                  | 6.13.1  |
+| com.firework.external.imageloading:glide          | 6.13.1  |
+| com.firework.external.imageloading:picasso        | 6.13.1  |
+| com.firework.external.livestream:multiHostPlayer  | 6.13.1  |
+| com.firework.external.livestream:singleHostPlayer | 6.13.1  |
 | com.firework.core.di:di-core                      | 8.0.0   |
 | com.firework.core.di:di-android                   | 8.0.0   |
 | com.firework.core:event-bus                       | 7.0.0   |
