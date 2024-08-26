@@ -114,7 +114,7 @@ fun MavenArtifactRepository.configureUrl() {
     val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
     val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
 
-    val isSnapshot = false
+    val isSnapshot = true
 
     val repoUrl = if (isSnapshot) snapshotsRepoUrl else releasesRepoUrl
 
