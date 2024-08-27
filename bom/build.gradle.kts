@@ -6,7 +6,7 @@ plugins {
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.14.0-SNAPSHOT"
+    val fireworkSdkVersion = "6.14.0"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
@@ -66,7 +66,7 @@ publishing {
 fun MavenPublication.configurePublication() {
     groupId = "com.firework"
     artifactId = "firework-bom"
-    version = "2024.08.26-SNAPSHOT"
+    version = "2024.08.26"
 }
 
 fun MavenPublication.configurePom() {
@@ -114,7 +114,7 @@ fun MavenArtifactRepository.configureUrl() {
     val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
     val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
 
-    val isSnapshot = true
+    val isSnapshot = false
 
     val repoUrl = if (isSnapshot) snapshotsRepoUrl else releasesRepoUrl
 
