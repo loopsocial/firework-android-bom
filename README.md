@@ -20,11 +20,11 @@ implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 
 | Dependency                                        | Version |
 |:--------------------------------------------------|:--------|
-| com.firework:sdk                                  | 6.14.3  |
-| com.firework.external.imageloading:glide          | 6.14.3  |
-| com.firework.external.imageloading:picasso        | 6.14.3  |
-| com.firework.external.livestream:multiHostPlayer  | 6.14.3  |
-| com.firework.external.livestream:singleHostPlayer | 6.14.3  |
+| com.firework:sdk                                  | 6.14.4  |
+| com.firework.external.imageloading:glide          | 6.14.4  |
+| com.firework.external.imageloading:picasso        | 6.14.4  |
+| com.firework.external.livestream:multiHostPlayer  | 6.14.4  |
+| com.firework.external.livestream:singleHostPlayer | 6.14.4  |
 | com.firework.core.di:di-core                      | 8.0.0   |
 | com.firework.core.di:di-android                   | 8.0.0   |
 | com.firework.core:event-bus                       | 7.0.0   |
@@ -33,7 +33,7 @@ implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 | com.firework.core:json                            | 7.0.0   |
 | com.firework.core:logger                          | 8.1.0   |
 | com.firework.core:motion-sensor                   | 7.0.0   |
-| com.firework.core:player                          | 8.3.0   |
+| com.firework.core:player                          | 8.3.1   |
 | com.firework.core:session-manager                 | 7.0.0   |
 | com.firework.core:storage                         | 7.0.1   |
 | com.firework.core:utility                         | 7.0.0   |
