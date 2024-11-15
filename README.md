@@ -12,7 +12,7 @@ Using the BoM version, the app doesn't need to define the dependencies versions,
 ## Latest release
 
 ```kotlin
-val fireworkBomVersion = "2024.11.03"
+val fireworkBomVersion = "2024.11.15"
 implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 ```
 
@@ -20,11 +20,11 @@ implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 
 | Dependency                                        | Version |
 |:--------------------------------------------------|:--------|
-| com.firework:sdk                                  | 6.15.2  |
-| com.firework.external.imageloading:glide          | 6.15.2  |
-| com.firework.external.imageloading:picasso        | 6.15.2  |
-| com.firework.external.livestream:multiHostPlayer  | 6.15.2  |
-| com.firework.external.livestream:singleHostPlayer | 6.15.2  |
+| com.firework:sdk                                  | 6.15.3  |
+| com.firework.external.imageloading:glide          | 6.15.3  |
+| com.firework.external.imageloading:picasso        | 6.15.3  |
+| com.firework.external.livestream:multiHostPlayer  | 6.15.3  |
+| com.firework.external.livestream:singleHostPlayer | 6.15.3  |
 | com.firework.core.di:di-core                      | 8.0.0   |
 | com.firework.core.di:di-android                   | 8.0.0   |
 | com.firework.core:event-bus                       | 7.0.0   |
@@ -37,6 +37,6 @@ implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 | com.firework.core:session-manager                 | 7.0.0   |
 | com.firework.core:storage                         | 7.0.1   |
 | com.firework.core:utility                         | 7.0.0   |
-| com.firework.core:vast-parser                     | 7.0.1   |
+| com.firework.core:vast-parser                     | 7.0.2   |
 | com.firework.core.network:http                    | 7.1.0   |
 | com.firework.core.network:web-socket              | 8.1.1   |
