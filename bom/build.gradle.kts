@@ -1,12 +1,11 @@
 plugins {
     id("io.github.gradlebom.generator-plugin") version "1.0.0.Final"
-    id("maven-publish")
     signing
 }
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.21.0"
+    val fireworkSdkVersion = "6.22.0"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
@@ -30,7 +29,7 @@ bomGenerator {
     includeDependency("com.firework.core", "utility", "7.0.0")
     includeDependency("com.firework.core", "vast-parser", "7.0.2")
     includeDependency("com.firework.core.network", "http", "7.1.0")
-    includeDependency("com.firework.core.network", "web-socket", "8.1.1")
+    includeDependency("com.firework.core.network", "web-socket", "8.2.0")
     // endregion
 }
 
@@ -48,25 +47,15 @@ publishing {
             configurePom()
         }
         signing.sign(publication)
-
-        create<MavenPublication>("unsignedRelease") {
-            configurePublication()
-            configurePom()
-        }
-
-        repositories {
-            maven {
-                configureUrl()
-                configureCredentials()
-            }
-        }
     }
 }
 
+
+print(findProperty("bom-version").toString())
 fun MavenPublication.configurePublication() {
     groupId = "com.firework"
     artifactId = "firework-bom"
-    version = "2025.06.05"
+    version = findProperty("bom-version").toString()
 }
 
 fun MavenPublication.configurePom() {
@@ -110,20 +99,3 @@ fun MavenPom.configureScm() {
     }
 }
 
-fun MavenArtifactRepository.configureUrl() {
-    val releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-    val snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-
-    val isSnapshot = false
-
-    val repoUrl = if (isSnapshot) snapshotsRepoUrl else releasesRepoUrl
-
-    setUrl(repoUrl)
-}
-
-fun MavenArtifactRepository.configureCredentials() {
-    credentials {
-        username = System.getenv("OSSRH_USERNAME")
-        password = System.getenv("OSSRH_PASSWORD")
-    }
-}

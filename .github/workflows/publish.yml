@@ -27,7 +27,7 @@ jobs:
           GPG_SIGNING_SECRET_KEY: ${{ secrets.GPG_SIGNING_SECRET_KEY }}
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
-        run: ./gradlew :bom:publishSignedReleasePublicationToMavenRepository
+        run: ./gradlew :bom:publishSignedReleasePublicationToSonatypeRepository closeSonatypeStagingRepository
 
   notification_job:
     needs: [ publish_job ]
