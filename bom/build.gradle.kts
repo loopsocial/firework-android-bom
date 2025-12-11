@@ -5,7 +5,7 @@ plugins {
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.26.4"
+    val fireworkSdkVersion = "6.27.2"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
@@ -15,8 +15,8 @@ bomGenerator {
     // endregion
 
     // region Core
-    includeDependency("com.firework.core.di", "di-core", "8.0.0")
-    includeDependency("com.firework.core.di", "di-android", "8.0.0")
+    includeDependency("com.firework.core.di", "di-core", "8.0.2")
+    includeDependency("com.firework.core.di", "di-android", "8.0.2")
     includeDependency("com.firework.core", "event-bus", "7.0.0")
     includeDependency("com.firework.core", "gql", "7.0.3")
     includeDependency("com.firework.core", "image-loader", "7.0.4")
