@@ -12,7 +12,7 @@ Using the BoM version, the app doesn't need to define the dependencies versions,
 ## Latest release
 
 ```kotlin
-val fireworkBomVersion = "2025.01.21"
+val fireworkBomVersion = "2026.01.21"
 implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 ```
 
