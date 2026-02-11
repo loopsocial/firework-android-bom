@@ -12,19 +12,19 @@ Using the BoM version, the app doesn't need to define the dependencies versions,
 ## Latest release
 
 ```kotlin
-val fireworkBomVersion = "2026.02.10"
+val fireworkBomVersion = "2026.02.11"
 implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 ```
 
 ### Dependencies versions
 
 | Dependency                                        | Version |
-| :------------------------------------------------ | :------ |
-| com.firework:sdk                                  | 6.28.7  |
-| com.firework.external.imageloading:glide          | 6.28.7  |
-| com.firework.external.imageloading:picasso        | 6.28.7  |
-| com.firework.external.livestream:multiHostPlayer  | 6.28.7  |
-| com.firework.external.livestream:singleHostPlayer | 6.28.7  |
+| :------------------------------------------------ |:--------|
+| com.firework:sdk                                  | 6.29.0  |
+| com.firework.external.imageloading:glide          | 6.29.0  |
+| com.firework.external.imageloading:picasso        | 6.29.0  |
+| com.firework.external.livestream:multiHostPlayer  | 6.29.0  |
+| com.firework.external.livestream:singleHostPlayer | 6.29.0  |
 | com.firework.core.di:di-core                      | 8.0.2   |
 | com.firework.core.di:di-android                   | 8.0.2   |
 | com.firework.core:event-bus                       | 7.0.0   |
@@ -39,4 +39,4 @@ implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 | com.firework.core:utility                         | 7.0.0   |
 | com.firework.core:vast-parser                     | 7.0.2   |
 | com.firework.core.network:http                    | 7.1.0   |
-| com.firework.core.network:web-socket              | 8.1.1   |
+| com.firework.core.network:web-socket              | 8.2.0   |
