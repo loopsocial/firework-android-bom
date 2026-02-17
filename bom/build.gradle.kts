@@ -5,7 +5,7 @@ plugins {
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.29.0"
+    val fireworkSdkVersion = "6.29.1"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
