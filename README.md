@@ -12,7 +12,7 @@ Using the BoM version, the app doesn't need to define the dependencies versions,
 ## Latest release
 
 ```kotlin
-val fireworkBomVersion = "2026.08.10"
+val fireworkBomVersion = "2026.08.16"
 implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 ```
 
@@ -20,9 +20,9 @@ implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 
 | Dependency                                        | Version |
 | :------------------------------------------------ | :------ |
-| com.firework:sdk                                  | 6.34.1  |
-| com.firework.external.imageloading:glide          | 6.34.1  |
-| com.firework.external.livestream:singleHostPlayer | 6.34.1  |
+| com.firework:sdk                                  | 6.34.3  |
+| com.firework.external.imageloading:glide          | 6.34.3  |
+| com.firework.external.livestream:singleHostPlayer | 6.34.3  |
 | com.firework.core.di:di-core                      | 8.0.3   |
 | com.firework.core.di:di-android                   | 8.0.3   |
 | com.firework.core:event-bus                       | 7.0.0   |
