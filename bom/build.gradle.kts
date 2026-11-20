@@ -5,28 +5,34 @@ plugins {
 
 bomGenerator {
     // region Firework SDK
-    val fireworkSdkVersion = "6.32.6"
+    val fireworkSdkVersion = "6.38.0"
     includeDependency("com.firework", "sdk", fireworkSdkVersion)
+    includeDependency("com.firework", "sdk-core", fireworkSdkVersion)
 
     includeDependency("com.firework.external.imageloading", "glide", fireworkSdkVersion)
     includeDependency("com.firework.external.imageloading", "picasso", fireworkSdkVersion)
-    includeDependency("com.firework.external.livestream", "multiHostPlayer", fireworkSdkVersion)
     includeDependency("com.firework.external.livestream", "singleHostPlayer", fireworkSdkVersion)
     // endregion
 
+    // region ExoPlayer fork, pre-shrunk per SDK release (MS-2040)
+    listOf("core", "common", "extractor", "ui", "hls", "datasource", "database", "decoder").forEach {
+        includeDependency("com.firework.exoplayer", "exoplayer-$it", fireworkSdkVersion)
+    }
+    // endregion
+
     // region Core
-    includeDependency("com.firework.core.di", "di-core", "8.0.2")
-    includeDependency("com.firework.core.di", "di-android", "8.0.2")
+    includeDependency("com.firework.core.di", "di-core", "8.0.4")
+    includeDependency("com.firework.core.di", "di-android", "8.0.4")
     includeDependency("com.firework.core", "event-bus", "7.0.0")
     includeDependency("com.firework.core", "gql", "7.0.3")
     includeDependency("com.firework.core", "image-loader", "7.0.4")
     includeDependency("com.firework.core", "json", "7.0.0")
     includeDependency("com.firework.core", "logger", "8.1.0")
-    includeDependency("com.firework.core", "player", "8.4.0")
+    includeDependency("com.firework.core", "player", "8.5.0")
     includeDependency("com.firework.core", "storage", "7.0.1")
     includeDependency("com.firework.core", "utility", "7.0.0")
     includeDependency("com.firework.core", "vast-parser", "7.0.2")
-    includeDependency("com.firework.core.network", "web-socket", "8.2.0")
+    includeDependency("com.firework.core.network", "web-socket", "8.2.1")
     // endregion
 }
 
