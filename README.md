@@ -22,7 +22,6 @@ implementation(platform("com.firework:firework-bom:$fireworkBomVersion"))
 | :------------------------------------------------ | :------ |
 | com.firework:sdk                                  | 6.38.0  |
 | com.firework:sdk-core                             | 6.38.0  |
-| com.firework.exoplayer:exoplayer-*                | 6.38.0  |
 | com.firework.external.imageloading:glide          | 6.38.0  |
 | com.firework.external.livestream:singleHostPlayer | 6.38.0  |
 | com.firework.core.di:di-core                      | 8.0.4   |

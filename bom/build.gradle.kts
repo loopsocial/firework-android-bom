@@ -14,12 +14,6 @@ bomGenerator {
     includeDependency("com.firework.external.livestream", "singleHostPlayer", fireworkSdkVersion)
     // endregion
 
-    // region ExoPlayer fork, pre-shrunk per SDK release (MS-2040)
-    listOf("core", "common", "extractor", "ui", "hls", "datasource", "database", "decoder").forEach {
-        includeDependency("com.firework.exoplayer", "exoplayer-$it", fireworkSdkVersion)
-    }
-    // endregion
-
     // region Core
     includeDependency("com.firework.core.di", "di-core", "8.0.4")
     includeDependency("com.firework.core.di", "di-android", "8.0.4")
